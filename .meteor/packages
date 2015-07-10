@@ -9,3 +9,5 @@ autopublish
 insecure
 mquandalle:jade
 coffeescript
+anti:fake
+dburles:factory
