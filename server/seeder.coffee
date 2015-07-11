@@ -4,7 +4,7 @@ Meteor.startup ->
       Fake.sentence()
   }
 
-  # Messages.remove({})
+  Messages.remove({})
 
   if Messages.find({}).count() is 0
     _(10).times (n) ->
