@@ -1,8 +1,11 @@
 Template.footer.events 
 
-  'keypress input': (event) ->
-    if event.charCode is 13
-      event.stopPropagation()
-      $('.message-history').append('<div class="message"><a href="" class="message_profile-pic"></a><a href="" class="message_username">scotch</a><span class="message_timestamp">1:31 AM</span><span class="message_star"></span><span class="message_content">' + $('.input-box_text').val() + '</span></div>')
-      $('.input-box_text').val("")
-      false
+  'keypress input': (e) ->
+    inputVal = $(".input-box_text").val()
+    if !!inputVal
+      charCode = if typeof e.which is "number" then e.which else e.keyCode
+      if charCode is 13
+        e.stopPropagation()
+        Messages.insert {text: inputVal}
+        $(".input-box_text").val("")
+        false
