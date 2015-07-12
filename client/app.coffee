@@ -8,10 +8,10 @@ Accounts.ui.config {
 Template.registerHelper "usernameFromId", (userId) ->
   user = Meteor.users.findOne {_id: userId}
   if typeof user is "undefined"
-    "Anon"
+    return "Anon"
   if typeof user.services.github isnt "undefined"
-    user.services.github.username
-  user.username
+    return user.services.github.username
+  return user.username
 
 Template.registerHelper "timestampToTime", (timestamp) ->
   console.log "timestamp " + timestamp
