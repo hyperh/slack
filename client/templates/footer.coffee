@@ -6,6 +6,10 @@ Template.footer.events
       charCode = if typeof e.which is "number" then e.which else e.keyCode
       if charCode is 13
         e.stopPropagation()
-        Messages.insert {text: inputVal}
+        Messages.insert {
+          text: inputVal
+          user: Meteor.userId()
+          timestamp: Date.now()
+        }
         $(".input-box_text").val("")
         false

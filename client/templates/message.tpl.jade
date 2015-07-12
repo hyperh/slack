@@ -1,6 +1,6 @@
 .message
   a.message_profile-pic(href="")
-  a.message_username(href="") scotch
-  span.message_timestamp 1:31 AM
+  a.message_username(href="") {{usernameFromId user}}
+  span.message_timestamp {{timestampToTime timestamp}}
   span.message_star
   span.message_content #{text}

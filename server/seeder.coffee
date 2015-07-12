@@ -7,5 +7,5 @@ Meteor.startup ->
   Messages.remove({})
 
   if Messages.find({}).count() is 0
-    _(10).times (n) ->
+    _(2).times (n) ->
       Factory.create "message"
