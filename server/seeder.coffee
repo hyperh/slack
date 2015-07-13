@@ -11,6 +11,7 @@ Meteor.startup ->
     text: -> Fake.sentence()
     user: Meteor.users.findOne()._id
     timestamp: Date.now()
+    channel: "general"
   }
 
   Messages.remove({})
@@ -18,3 +19,9 @@ Meteor.startup ->
   if Messages.find({}).count() is 0
     _(10).times (n) ->
       Factory.create "message"
+
+  Channels.remove({})
+  Channels.insert 
+    name: "general"
+  Channels.insert
+    name: "random"

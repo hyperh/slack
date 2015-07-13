@@ -1,5 +1,5 @@
-Meteor.subscribe "messages"
 Meteor.subscribe "allUsernames"
+Meteor.subscribe "channels"
 
 Accounts.ui.config {
   passwordSignupFields: "USERNAME_AND_EMAIL"
@@ -14,7 +14,6 @@ Template.registerHelper "usernameFromId", (userId) ->
   return user.username
 
 Template.registerHelper "timestampToTime", (timestamp) ->
-  console.log "timestamp " + timestamp
   date = new Date(timestamp)
   hours = date.getHours()
   minutes = "0" + date.getMinutes()

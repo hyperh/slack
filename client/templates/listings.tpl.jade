@@ -2,9 +2,6 @@
   .listings_channels
     h2.listings_header Channels
     ul.channel_list
-      li.channel.active
-        a.channel_name
-          span.unread 0
-          span hk
-            span.prefix #
+      each channels
+        +channel
   .listings_direct-messages

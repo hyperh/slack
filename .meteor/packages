@@ -14,3 +14,5 @@ accounts-password
 accounts-ui
 accounts-github
 email
+meteorhacks:flow-router
+meteorhacks:flow-layout
